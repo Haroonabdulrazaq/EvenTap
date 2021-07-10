@@ -28,6 +28,9 @@ gem 'bulma-rails', '~> 0.9.1'
 #Simple Forms
 gem 'simple_form', '~> 5.1'
 
+#Devise
+gem 'devise', '~> 4.8'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
