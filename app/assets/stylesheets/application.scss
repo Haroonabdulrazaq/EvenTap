@@ -25,3 +25,11 @@
      color: white;
    }
  }
+
+ .column-wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   .card {
+    min-height: 20em;
+   }
+ }
