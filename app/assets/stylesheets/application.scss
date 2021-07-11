@@ -42,7 +42,12 @@
  }
  .description {
    .content {
-     max-height: 3em;
+     min-height: 3em;
+     height: auto;
    }
  }
- 
+ select {
+   width: inherit;
+   height: inherit;
+ }
+

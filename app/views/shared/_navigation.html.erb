@@ -21,20 +21,25 @@
         <div class="field is-grouped level">
           <% if user_signed_in? %>
             <p class="control">
-              <%= link_to "Create Event", new_event_path, class: "button is-info is-inverted" %>
+              <%= link_to new_event_path, class: "button is-info is-inverted" do %>
+                <span class="icon">
+                  <i class="fa fa-plus-circle is-3" arial-hidden="true"></i>
+                </span>
+                <span>Create Event</span>
+              <% end %>
             </p>
             <p class="control">
               <%= link_to current_user.name, class: "text-info is-inverted" %>
             </p>
             <p class="control">
-              <%= link_to "Signout", destroy_user_session_path, method: :delete,  class: "text-info is-inverted" %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete,  class: "text-info is-inverted" %>
             </p>
           <% else %>
             <p class="control">
-              <%= link_to "Signin", new_user_session_path, class: "button is-primary" %>
+              <%= link_to "Sign In", new_user_session_path, class: "button is-primary" %>
             </p>
             <p class="control">
-              <%= link_to "SignUp", new_user_registration_path, class: "button is-light" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "button is-light" %>
             </p>
           <% end %>
         </div>
