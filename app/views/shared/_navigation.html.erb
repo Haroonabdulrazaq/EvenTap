@@ -1,28 +1,44 @@
-<section class="hero is-link is-small">
-  <!-- Hero head: will stick at the top -->
-  <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item">
-           <%= link_to root_path, class: 'has-text-white is-3 title' do %>
-              <div>
-              <span>EvenTap</span>
-              </div>
-           <%end%>
-          </a>
-          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
-          <div class="navbar-end">
-           Hello
-          </div>
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to root_path, class: "navbar-item" do %>
+      <h1 class="title is-4 evenTap"> EvenTap </h1>
+    <% end %>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <%= link_to "Home", root_path, class: "navbar-item" %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <% if user_signed_in? %>
+            <p class="control">
+              <%= link_to "Add Event", new_event_path, class: "button is-info is-inverted" %>
+            </p>
+            <p class="control">
+              <%= link_to current_user.name, class: "text-info is-inverted" %>
+            </p>
+            <p class="control">
+              <%= link_to "Signout", destroy_user_session_path, method: :delete,  class: "text-info is-inverted" %>
+            </p>
+          <% else %>
+            <p class="control">
+              <%= link_to "Signin", new_user_session_path, class: "button is-primary" %>
+            </p>
+            <p class="control">
+              <%= link_to "SignUp", new_user_registration_path, class: "button is-light" %>
+            </p>
+          <% end %>
         </div>
       </div>
-    </nav>
+    </div>
   </div>
-</section>
+</nav>
