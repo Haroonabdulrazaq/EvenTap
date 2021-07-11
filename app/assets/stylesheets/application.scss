@@ -33,3 +33,16 @@
     min-height: 20em;
    }
  }
+
+ .columns {
+   .card {
+    //  border: 1px solid chartreuse;
+     margin: 0 2em;
+   }
+ }
+ .description {
+   .content {
+     max-height: 3em;
+   }
+ }
+ 

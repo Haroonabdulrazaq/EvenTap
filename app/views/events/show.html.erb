@@ -1,29 +1,77 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Attend:</strong>
-  <%= @event.attend %>
-</p>
-
-<p>
-  <strong>Eventtype:</strong>
-  <%= @event.eventType %>
-</p>
-
+<section class="container mt-4">
+  <div class="columns is-centered mt-4">
+    <div class="column is-6 box"> 
+      <h2 class="title is-3 has-text-centered">Event Detail</h2>
+      <p class="p-3">
+        <strong>Name:</strong>
+        <%= @event.name %>
+      </p>
+      <p class="p-3">
+        <strong>Description:</strong>
+        <%= @event.description %>
+      </p>
+      <p class="p-3">
+        <strong>Date:</strong>
+        <%= @event.date %>
+      </p>
+      <p class="p-3">
+        <strong>Attend:</strong>
+        <%= @event.attend %>
+      </p>
+      <p class="p-3">
+        <strong>Event Type:</strong>
+        <%= @event.eventType %>
+      </p>
+    </div>
+    <div class="column is-4">
+      <nav class='panel'>
+        <p class='panel-heading'>Event Info</p>
+        <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fa fa-address-card"></i>
+            </span>
+            <span class='has-text-centered'>
+            <strong>Category Past Event based on Timestamp </strong><%= @event.eventType%>
+            </span>
+        </a>
+        <a class="panel-block">
+            <span class="panel-icon">
+            <i class='fa fa-user'></i>
+            </span>
+            <span class='has-text-centered'>
+            <strong>Author </strong><%= @event.user.name%>
+            </span>
+        </a>
+        <a class="panel-block">
+            <span class="panel-icon">
+            <i class="fa fa-thumbs-up"></i>
+            </span>
+            <span class='has-text-centered'>
+            <strong>Event Type </strong><%= @event.eventType%>
+            </span>
+        </a>
+        <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fa fa-hourglass-end"></i>
+            </span>
+            <span >
+            <strong>Created </strong><%= time_ago_in_words(@event.created_at) %> ago
+            </span>
+        </a>
+        <div class="panel-block">
+          <span class="panel-icon">
+          <i class=""></i>
+          </span>
+          <span class='has-text-centered'>
+          <% if current_user %>
+            <p> Embed Print Attendees</p>
+          <% end %>
+          </span>
+        </div>
+      </nav>
+      <%= render 'shared/btnnav'%>
+    </div>
+  <div>
+</section>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
