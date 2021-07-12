@@ -29,7 +29,7 @@
               <% end %>
             </p>
             <p class="control">
-              <%= link_to current_user.name, class: "text-info is-inverted" %>
+              <%= current_user.name %>
             </p>
             <p class="control">
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete,  class: "text-info is-inverted" %>

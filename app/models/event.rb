@@ -21,4 +21,9 @@ class Event < ApplicationRecord
     date_format = date.strftime("%Y-%m-%d %H:%M") 
     date_format 
   end
+
+  def self.search_by(search_term)
+    where('LOWER(name) LIKE :search_term',
+          search_term: "%#{search_term.downcase}%")
+  end
 end
