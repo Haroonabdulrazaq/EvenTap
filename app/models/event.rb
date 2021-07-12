@@ -11,14 +11,14 @@ class Event < ApplicationRecord
    event_date_timestamp = DateTime.rfc3339(time_format).to_time.to_i
    current_timestamp = Time.now.to_i
     if current_timestamp  > event_date_timestamp
-      "Past"
+      "Inactive"
     else
       "Active"
     end
   end
 
   def self.event_date(date)
-    time_format = date.strftime("%Y-%m-%d %I:%M:%S")
-    time_format
+    date_format = date.strftime("%Y-%m-%d %H:%M") 
+    date_format 
   end
 end
