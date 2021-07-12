@@ -1,0 +1,37 @@
+<section class="container">
+  <div class="columns">
+    <div class="column mt-5">
+      <div class="is-pulled-right">
+        <%= form_for "", url: events_path, role: "search", method: :get  do   %>
+            <%= text_field_tag :search, @search_term, placeholder: "Search...", autofocus: true, class: "input is-4"%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-centered is-multiline is-mobile my-5 ">
+    <% @events.each do | event | %>
+      <div class="card column is-3 box mb-4">
+        <div class="card-header p-5">
+          <div class="media-content">
+            <button class="button is-primary is-light is-small is-pulled-right"><%= event.eventType %></button>
+            <p class="title is-5"> <%= event.name %> </p>
+            <p class="subtitle is-6"> <strong>Author:</strong> <%= event.user.name %></p>
+          </div>
+        </div>
+        <div class="card-content description">
+          <div class="content py-5">
+            <%= event.description %>
+          </div>
+        </div>
+        <div class="card-content">
+          <strong>Created </strong><%= time_ago_in_words(event.created_at) %> ago
+        </div>
+          <%= link_to event, class: "has-text-centered" do %>
+            <div class="card-footer py-0 pl-2">
+              Detail  
+            </div>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>

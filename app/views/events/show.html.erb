@@ -1,0 +1,69 @@
+<section class="container mt-4">
+  <div class="columns is-centered mt-4">
+    <div class="column is-6 box mt-5"> 
+      <h2 class="title is-3 has-text-centered">Event Detail</h2>
+      <h3 class="title is-3 has-text-centered">
+        <%= @event.name %>
+      </h3>
+      <p class="p-3 is-3 has-text-centered">
+        <%= @event.description %>
+      </p>
+      <p class="p-3">
+        <strong>Date:</strong>
+        <%= @event_date %>
+      </p>
+      <p class="p-3">
+        <strong>Event Type:</strong>
+        <%= @event.eventType %>
+      </p>
+    </div>
+    <div class="column is-4 mt-4">
+      <nav class='panel'>
+        <p class='panel-heading'>Event Info</p>
+        <a class="panel-block">
+            <span class="panel-icon">
+            <i class='fa fa-user'></i>
+            </span>
+            <span class='has-text-centered'>
+            <strong>Author </strong><%= @event.user.name%>
+            </span>
+        </a>
+        <a class="panel-block">
+            <span class="panel-icon">
+            <i class="fa fa-thumbs-up"></i>
+            </span>
+            <span class='has-text-centered'>
+            <strong>Event Type </strong><%= @event.eventType%>
+            </span>
+        </a>
+        <a class="panel-block">
+            <span class="panel-icon">
+            <i class="fa fa-thumbs-up"></i>
+            </span>
+            <span class='has-text-centered'>
+            <strong>Event Status </strong><%= @event_status %>
+            </span>
+        </a>
+        <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fa fa-hourglass-end"></i>
+            </span>
+            <span >
+            <strong>Created </strong><%= time_ago_in_words(@event.created_at) %> ago
+            </span>
+        </a>
+        <div class="panel-block">
+          <span class="panel-icon">
+          <i class=""></i>
+          </span>
+          <span class='has-text-centered'>
+          <% if current_user %>
+            <p> Embed Print Attendees</p>
+          <% end %>
+          </span>
+        </div>
+      </nav>
+      <%= render 'shared/btnnav'%>
+    </div>
+  <div>
+</section>

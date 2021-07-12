@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#The main motive of this event is to bring together thousands of Junior Developers so they can inspire each other and bring about new ideas.

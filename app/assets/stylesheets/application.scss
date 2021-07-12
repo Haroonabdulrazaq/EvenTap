@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bulma";
+.evenTap {
+  color: white;
+}
+
+ .control {
+   a {
+     text-decoration: none;
+     color: white;
+   }
+ }
+
+ .column-wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   .card {
+    min-height: 20em;
+   }
+ }
+
+ .columns {
+   .card {
+    //  border: 1px solid chartreuse;
+     margin: 0 2em;
+   }
+ }
+ .description {
+   .content {
+     min-height: 3em;
+     height: auto;
+   }
+ }
+ select {
+   width: inherit;
+   height: inherit;
+   border: 1px solid chartreuse;
+   border: none;
+   display: block;
+ }
+
+ 
+ .panel-block:hover {
+    color: #ff4500;
+}
+ 
+
