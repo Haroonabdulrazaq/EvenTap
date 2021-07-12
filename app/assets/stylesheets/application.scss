@@ -26,11 +26,13 @@
    }
  }
 
- .column-wrapper {
+ .columns {
    display: flex;
    flex-wrap: wrap;
    .card {
     min-height: 20em;
+    min-width: 16em;
+
    }
  }
 
