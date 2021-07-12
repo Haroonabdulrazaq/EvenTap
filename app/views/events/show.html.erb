@@ -12,7 +12,7 @@
       </p>
       <p class="p-3">
         <strong>Date:</strong>
-        <%= @event.date %>
+        <%= @event_date %>
       </p>
       <p class="p-3">
         <strong>Attend:</strong>
@@ -28,14 +28,6 @@
         <p class='panel-heading'>Event Info</p>
         <a class="panel-block">
             <span class="panel-icon">
-              <i class="fa fa-address-card"></i>
-            </span>
-            <span class='has-text-centered'>
-            <strong>Category Past Event based on Timestamp </strong><%= @event.eventType%>
-            </span>
-        </a>
-        <a class="panel-block">
-            <span class="panel-icon">
             <i class='fa fa-user'></i>
             </span>
             <span class='has-text-centered'>
@@ -48,6 +40,14 @@
             </span>
             <span class='has-text-centered'>
             <strong>Event Type </strong><%= @event.eventType%>
+            </span>
+        </a>
+        <a class="panel-block">
+            <span class="panel-icon">
+            <i class="fa fa-thumbs-up"></i>
+            </span>
+            <span class='has-text-centered'>
+            <strong>Event Status </strong><%= @event_status %>
             </span>
         </a>
         <a class="panel-block">

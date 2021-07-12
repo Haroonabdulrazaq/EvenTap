@@ -5,10 +5,16 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all.order("Created_at DESC")
+    
   end
 
   # GET /events/1 or /events/1.json
   def show
+    @event = Event.find(params[:id])
+    # @time_calc = TimeCalc.new(@event)
+    # @detect_event_status = @time_calc.detect_event_status
+    @event_status = Event.detect_event_status(@event.date)
+    @event_date = Event.event_date(@event.date)
   end
 
   # GET /events/new
