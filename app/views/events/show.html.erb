@@ -52,16 +52,6 @@
             <strong>Created </strong><%= time_ago_in_words(@event.created_at) %> ago
             </span>
         </a>
-        <div class="panel-block">
-          <span class="panel-icon">
-          <i class=""></i>
-          </span>
-          <span class='has-text-centered'>
-          <% if current_user %>
-            <p> Embed Print Attendees</p>
-          <% end %>
-          </span>
-        </div>
       </nav>
       <%= render 'shared/btnnav'%>
     </div>
